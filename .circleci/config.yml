@@ -18,15 +18,14 @@ jobs:
       - run: sudo pip install sklearn
       - run: sudo python3 -m pip install ipykernel
       - run: sudo python3 -m ipykernel install --user
-      - run: 
-       command:   jupyter-nbconvert --execute ./practice.ipynb
-       name: Test
+      - run:
+          command: jupyter nbconvert --execute practice.ipynb
+          name: Test
       - store_artifacts:
-         path: ./practice.html
-         destination: practice.html
-      
+          path: ./practice.html
+          destination: practice.html
 
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build-and-testst
